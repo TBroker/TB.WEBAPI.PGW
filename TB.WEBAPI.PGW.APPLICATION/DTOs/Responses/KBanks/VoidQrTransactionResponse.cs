@@ -1,0 +1,70 @@
+﻿using System.Text.Json.Serialization;
+
+namespace TB.WEBAPI.PGW.APPLICATION.DTOs.Responses.KBanks
+{
+    public class VoidQrTransactionResponse
+    {
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        [JsonPropertyName("object")]
+        public string? Object { get; set; }
+
+        [JsonPropertyName("created")]
+        public string? Created { get; set; }
+
+        [JsonPropertyName("livemode")]
+        public bool Livemode { get; set; }
+
+        [JsonPropertyName("amount")]
+        public double Amount { get; set; }
+
+        [JsonPropertyName("currency")]
+        public string? Currency { get; set; }
+
+        [JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        [JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
+
+        [JsonPropertyName("source")]
+        public VoidQrTransactionSource? Source { get; set; }
+
+        [JsonPropertyName("status")]
+        public string? Status { get; set; }
+
+        [JsonPropertyName("order_id")]
+        public string? OrderId { get; set; }
+
+        [JsonPropertyName("transaction_state")]
+        public string? TransactionState { get; set; }
+
+        [JsonPropertyName("reference_order")]
+        public string? ReferenceOrder { get; set; }
+
+        [JsonPropertyName("failure_code")]
+        public string? FailureCode { get; set; }
+
+        [JsonPropertyName("failure_message")]
+        public string? FailureMessage { get; set; }
+    }
+
+    public class VoidQrTransactionSource
+    {
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        [JsonPropertyName("object")]
+        public string? Object { get; set; }
+
+        [JsonPropertyName("brand")]
+        public string? Brand { get; set; }
+
+        [JsonPropertyName("card_masking")]
+        public string? CardMasking { get; set; }
+
+        [JsonPropertyName("issuer_bank")]
+        public string? IssuerBank { get; set; }
+    }
+}

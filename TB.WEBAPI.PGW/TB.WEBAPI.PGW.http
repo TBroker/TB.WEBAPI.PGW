@@ -1,0 +1,6 @@
+@TB.WEBAPI.PGW_HostAddress = http://localhost:5191
+
+GET {{TB.WEBAPI.PGW_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
