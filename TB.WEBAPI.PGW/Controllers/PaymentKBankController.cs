@@ -9,8 +9,8 @@ namespace TB.WEBAPI.PGW.Controllers
     [ApiController]
     public class PaymentKBankController(IApiClientService apiClientService) : ControllerBase
     {
-        private readonly IApiClientService _apiClientService = apiClientService;
         private readonly string clientName = "KBankExternalApi";
+        private readonly IApiClientService _apiClientService = apiClientService;
 
         #region Qr Code
 
@@ -59,6 +59,10 @@ namespace TB.WEBAPI.PGW.Controllers
             var response = await _apiClientService.PostAsync<CreateChargeRequest, CreateChargeResponse>(clientName, "/card/v2/charge", request);
             return response.Code == 200 ? Ok(response) : BadRequest(response);
         }
+
+        #endregion Qr Code
+
+        #region CreditCard
 
         [HttpGet("card/inquiry/transaction/{id}")]
         public async Task<IActionResult> InquiryTransaction(string id)
